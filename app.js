@@ -75,6 +75,10 @@ const convertLikeDbObjectToResponseObject = (dbObject) => {
   };
 };
 
+app.get("/", async (request, response) => {
+    response.send({status:"Server Running"});
+});
+
 app.post("/register/", async (request, response) => {
   const { username, password, name, gender } = request.body;
   // check if user already exists with the same username
